@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h1>Weather Dashboard</h1>
+            <form id="city-form">
+                <input type="text" id="city-input" placeholder="Enter city name" required>
+                <button type="submit">Search</button>
+            </form>
+            <h2>Search History</h2>
+            <ul id="search-history"></ul>
+        </div>
+        <div class="main-content">
+            <div id="weather-info"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
