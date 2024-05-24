@@ -6,6 +6,12 @@ document.getElementById('city-form').addEventListener('submit', function(e) {
     getCoordinates(city);
 });
 
+document.getElementById('city-form').addEventListener('touchend', function(e) {
+    e.preventDefault();
+    const city = document.getElementById('city-input').value;
+    getCoordinates(city);
+});
+
 function getCoordinates(city) {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`)
         .then(response => response.json())
@@ -75,6 +81,7 @@ function displaySearchHistory() {
         const li = document.createElement('li');
         li.textContent = city;
         li.addEventListener('click', () => getCoordinates(city));
+        li.addEventListener('touchend', () => getCoordinates(city));
         searchHistoryEl.appendChild(li);
     });
 }

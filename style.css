@@ -70,11 +70,11 @@ button:hover {
 }
 
 .current-weather {
-    background-color: rgb(61, 142, 171);
+    background-color: skyblue;
 }
 
 .forecast-weather {
-    background-color: rgb(79, 79, 80);
+    background-color: navy;
 }
 
 .weather-icon {
@@ -96,6 +96,7 @@ button:hover {
 
 .forecast-container {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -106,4 +107,34 @@ button:hover {
 
 .forecast-container .weather-card:last-child {
     margin-right: 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .main-content {
+        width: 100%;
+    }
+
+    .forecast-container {
+        flex-direction: column;
+    }
+
+    .forecast-container .weather-card {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .forecast-container .weather-card:last-child {
+        margin-bottom: 0;
+    }
 }
